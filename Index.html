@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EngiSimulation - Engineering Simulations</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f5;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    .software-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .software-card {
+      background: white;
+      width: 250px;
+      height: 150px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 1.5rem 1rem;
+      position: relative;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .software-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .software-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #004080;
+      margin-bottom: 1rem;
+    }
+
+    .hover-info {
+      font-size: 1rem;
+      color: #004080;
+      background-color: #e0e0ff;
+      border-radius: 5px;
+      padding: 0.5rem;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+
+    .software-card:hover .hover-info {
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #004080;
+      color: white;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to EngiSimulation</h1>
+    <p>Explore engineering simulations and design templates</p>
+  </header>
+
+  <main class="software-section">
+    <a href="matlab.html" class="software-card">
+      <div class="software-title">MATLAB / Simulink</div>
+      <div class="hover-info">MATLAB/Simulink Simulations</div>
+    </a>
+
+    <a href="labview.html" class="software-card">
+      <div class="software-title">LabVIEW</div>
+      <div class="hover-info">Virtual Instruments</div>
+    </a>
+
+    <a href="multisim.html" class="software-card">
+      <div class="software-title">Multisim</div>
+      <div class="hover-info">Circuit Designs</div>
+    </a>
+
+    <a href="autocad.html" class="software-card">
+      <div class="software-title">AutoCAD</div>
+      <div class="hover-info">CAD Drawings</div>
+    </a>
+
+    <a href="custom-template.html" class="software-card">
+      <div class="software-title">Custom Template</div>
+      <div class="hover-info">On Request</div>
+    </a>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EngiSimulations. All rights reserved.</p>
+  </footer>
+</body>
+</html>

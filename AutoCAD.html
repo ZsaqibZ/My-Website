@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AutoCAD Templates</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      width: 250px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      color: #2980b9;
+    }
+
+    .card button {
+      padding: 8px 16px;
+      background-color: #2980b9;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .hover-info {
+      display: none;
+      margin-top: 15px;
+      background-color: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+      border-left: 3px solid #2980b9;
+      font-size: 14px;
+    }
+
+    .card:hover .hover-info {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>AutoCAD Templates</h1>
+
+  <div class="container">
+
+    <div class="card">
+      <h3>Electrical Wiring Diagram</h3>
+      <button>Download</button>
+      <div class="hover-info">
+        File: .dwg<br>
+        Version: AutoCAD 2021<br>
+        Layers: Power, Ground, Labels
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Single Line Diagram</h3>
+      <button>Download</button>
+      <div class="hover-info">
+        File: .dwg<br>
+        Version: AutoCAD 2020<br>
+        Layers: Busbar, Breakers
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Control Panel Layout</h3>
+      <button>Download</button>
+      <div class="hover-info">
+        File: .dwg<br>
+        Version: AutoCAD 2022<br>
+        Layers: Components, Dimensions
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
