@@ -2,20 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EngiSimulation - Engineering Simulations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EngiSimulation - Engineering Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="EngiSimulation.png" />
   <style>
+    .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem; /* Space between the logo and the title */
+    }
+
+    .logo {
+    width: 60px; /* Adjust the size of the logo */
+    height: auto;
+    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f5;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2a2a3f);
+      color: #e0e0e0;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #004080;
-      color: white;
-      padding: 1.5rem 1rem;
+      background: linear-gradient(135deg, #1f1f1f, #333);
+      color: #ffffff;
+      padding: 2.5rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    }
+
+    .intro-section {
+     display: flex;
+     align-items: flex-start;
+     justify-content: flex-start;
+     gap: 2rem; 
+     text-align: left;
+     padding: 2rem;
+    }
+
+    .text-content {
+    flex: 1;
+    max-width: 60%; /* Adjust width for text content */
+    }
+
+    .intro-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
+      color: #42a5f5;
+      line-height: 1.4;
+      /*margin-bottom: 1rem;*/
+    }
+
+    .intro-section p {
+      font-size: 1rem;
+      margin: 0;
+      color: #e0e0e0;
+      line-height: 1.5;
     }
 
     .software-section {
@@ -23,102 +76,122 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      padding: 2rem;
+      padding: 3rem 1rem;
     }
 
     .software-card {
-      background: white;
-      width: 250px;
-      height: 150px;
-      border-radius: 8px;
+      background: linear-gradient(135deg, #2a2a3f, #3a3a4f);
+      width: 260px;
+      height: 160px;
+      border-radius: 15px;
       text-align: center;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
       padding: 1.5rem 1rem;
       position: relative;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none;
       color: inherit;
+      overflow: hidden;
     }
 
     .software-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
     }
 
     .software-title {
       font-size: 1.3rem;
-      font-weight: bold;
-      color: #004080;
-      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #90caf9;
+      margin-bottom: 2rem;
     }
 
     .hover-info {
-      font-size: 1rem;
-      color: #004080;
-      background-color: #e0e0ff;
-      border-radius: 5px;
-      padding: 0.5rem;
+      font-size: 0.95rem;
+      color: #ffffff;
+      background-color: rgba(51, 51, 51, 0.9);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
       position: absolute;
-      bottom: 10px;
+      bottom: 15px;
       left: 50%;
       transform: translateX(-50%);
-      transition: all 0.3s ease;
+      transition: opacity 0.3s ease, transform 0.3s ease;
       opacity: 0;
+      pointer-events: none;
+      width: max-content;
+      max-width: 90%;
+      text-align: center;
     }
 
     .software-card:hover .hover-info {
       opacity: 1;
+      transform: translateX(-50%) translateY(-5px);
     }
 
     footer {
       text-align: center;
-      background-color: #004080;
-      color: white;
-      padding: 1rem;
+      background: #1f1f1f;
+      color: #aaaaaa;
+      padding: 1.5rem 1rem;
       font-size: 0.9rem;
       margin-top: 2rem;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    footer p {
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to EngiSimulation</h1>
-    <p>Explore engineering simulations and design templates</p>
-  </header>
+
+<header>
+  <div class="header-container">
+    <img src="EngiSimulation.png" alt="EngiSimulation" class="logo">
+    <h1>EngiSimulation</h1>
+  </div>
+</header>
+
+  <section class="intro-section">
+  <div class="text-content">
+    <h2>Your Gateway to Advanced Engineering Solutions</h2>
+    <p>
+      Access tools and templates to simplify complex engineering tasks and enhance your projects.
+    </p>
+  </div>
+  </section>
 
   <main class="software-section">
     <a href="MATLAB.html" class="software-card">
       <div class="software-title">MATLAB / Simulink</div>
-      <div class="hover-info">MATLAB/Simulink Simulations</div>
+      <div class="hover-info">Simulation Models</div>
     </a>
 
     <a href="LabVIEW.html" class="software-card">
       <div class="software-title">LabVIEW</div>
-      <div class="hover-info">Virtual Instruments</div>
+      <div class="hover-info">Virtual Instruments (VIs)</div>
     </a>
 
     <a href="Multisim.html" class="software-card">
       <div class="software-title">Multisim</div>
-      <div class="hover-info">Circuit Designs</div>
+      <div class="hover-info">Circuit Simulations</div>
     </a>
 
     <a href="AutoCAD.html" class="software-card">
       <div class="software-title">AutoCAD</div>
-      <div class="hover-info">CAD Drawings</div>
+      <div class="hover-info">Engineering Drawings</div>
     </a>
 
     <a href="custom-template.html" class="software-card">
-      <div class="software-title">Custom Template</div>
-      <div class="hover-info">On Request</div>
+      <div class="software-title">Custom Templates</div>
+      <div class="hover-info">Request Based Files</div>
     </a>
   </main>
 
   <footer>
-    <p>&copy; 2025 EngiSimulations. All rights reserved.</p>
+    <p>&copy; 2025 EngiSimulation. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
-
-
