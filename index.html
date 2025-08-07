@@ -147,6 +147,21 @@
       margin: 0;
     }
 
+    .text-blue {
+      color: #42a5f5; /* light blue */
+    }
+
+    .text-pink {
+      color: #e57399; /* vibrant pink */
+    }
+
+    .text-gradient {
+      background: linear-gradient(to right, #42a5f5, #e57399);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
     /* 🌐 Mobile Optimizations */
     @media (max-width: 768px) {
       .header-container {
@@ -176,7 +191,6 @@
         font-size: 1.1rem;
         text-align: center;
       }
-
       .logo {
         width: 40px;
         height: 40px;
@@ -212,7 +226,11 @@
 
 <section class="intro-section">
   <div class="text-content">
-    <h2>Your Gateway to Advanced Engineering Solutions</h2>
+    <h2>Your Gateway to 
+      <span class="text-blue">Advanced</span>
+      <span class="text-gradient">Engineering</span>
+      <span class="text-pink">Solutions</span>
+    </h2>
     <p>
       Access tools and templates to simplify complex engineering tasks and enhance your projects.
     </p>
@@ -252,7 +270,3 @@
 
 </body>
 </html>
-
-
-
-
