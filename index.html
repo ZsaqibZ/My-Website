@@ -19,9 +19,7 @@
   <meta property="og:url" content="https://www.engisimulation.com" />
   <meta property="og:type" content="website" />
 
-
-  
-   <script type="application/ld+json">
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -117,32 +115,57 @@
     .software-card {
       background: linear-gradient(135deg, #2b2b2b, #3a3a3a);
       border-radius: 12px;
-      text-align: center;
-      padding: 2rem 1rem 3rem; /* extra bottom padding */
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
       text-decoration: none;
       color: inherit;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-      min-height: 200px; /* 🧱 longer height */
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
     }
 
     .software-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-image-wrapper {
+      width: 100%;
+      background: #111;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 17rem;
+      display: block;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
     }
 
     .software-title {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 600;
       color: #90caf9;
-      margin-bottom: 1.5rem;
     }
 
-    .hover-info {
+    .info-visible {
+      font-size: 0.95rem;
+      color: #ddd;
+      background-color: rgba(40, 40, 40, 0.8);
+      border-radius: 8px;
+      padding: 0.4rem 0.8rem;
+    }
+
+    /*.hover-info {
       font-size: 0.95rem;
       color: #ffffff;
-      background-color: rgba(40, 40, 40, 0.95); /* blend in with grey theme */
+      background-color: rgba(40, 40, 40, 0.95); /* blend in with grey theme
       border-radius: 8px;
       padding: 0.5rem;
       position: absolute;
@@ -156,7 +179,7 @@
 
     .software-card:hover .hover-info {
       opacity: 1;
-    }
+    }*/
 
     footer {
       text-align: center;
@@ -263,23 +286,46 @@
 
 <main class="software-section">
   <a href="MATLAB.html" class="software-card">
-    <div class="software-title">MATLAB / Simulink</div>
-    <div class="hover-info">Simulation Models</div>
+    <div class="card-image-wrapper">
+      <img src="MATLAB.png" alt="MATLAB / Simulink" class="card-img" />
+    </div>
+    <div class="card-body">
+      <div class="software-title">MATLAB / Simulink</div>
+      <div class="info-visible">Simulation Models</div>
+    </div>
   </a>
 
+  <!-- LabVIEW Card -->
   <a href="LabVIEW.html" class="software-card">
-    <div class="software-title">LabVIEW</div>
-    <div class="hover-info">Virtual Instruments (VIs)</div>
+    <div class="card-image-wrapper">
+      <img src="LabVIEW.png" alt="LabVIEW" class="card-img" />
+    </div>
+    <div class="card-body">
+      <div class="software-title">LabVIEW</div>
+      <div class="info-visible">Virtual Instruments (VIs)</div>
+    </div>
   </a>
 
+  <!-- Multisim Card -->
   <a href="Multisim.html" class="software-card">
-    <div class="software-title">Multisim</div>
-    <div class="hover-info">Circuit Simulations</div>
+    <div class="card-image-wrapper">
+      <img src="Multisim.png" alt="Multisim" class="card-img" />
+    </div>
+    <div class="card-body">
+      <div class="software-title">Multisim</div>
+      <div class="info-visible">Circuit Simulations</div>
+    </div>
   </a>
 
+  <!-- AutoCAD Card -->
   <a href="AutoCAD.html" class="software-card">
-    <div class="software-title">AutoCAD</div>
-    <div class="hover-info">Engineering Drawings</div>
+    <div class="card-image-wrapper">
+      <img src="AutoCAD.png" alt="AutoCAD" class="card-img" />
+    </div>
+    <div class="card-body">
+      <div class="software-title">AutoCAD</div>
+      <div class="info-visible">Engineering Drawings</div>
+    </div>
   </a>
 
 </main>
@@ -290,6 +336,3 @@
 
 </body>
 </html>
-
-
-
