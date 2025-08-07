@@ -18,7 +18,7 @@
     }
 
     header {
-      background-color: #002b5c;
+      background-color: #1a1a1a;
       color: white;
       padding: 1.5rem 1rem;
       text-align: center;
@@ -50,6 +50,17 @@
       text-align: center;
     }
 
+    .notice {
+      background-color: rgba(255, 193, 7, 0.1);
+      color: #ffc107;
+      border: 1px solid #ffc10755;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 500;
+    }
+
     form {
       display: flex;
       flex-direction: column;
@@ -63,6 +74,10 @@
       font-size: 1rem;
       background-color: #1f1f1f;
       color: #e0e0e0;
+    }
+
+    textarea {
+      resize: none;
     }
 
     input::placeholder,
@@ -92,7 +107,7 @@
 
     footer {
       text-align: center;
-      background-color: #002b5c;
+      background-color: #1a1a1a;
       color: white;
       padding: 1rem;
       margin-top: 2rem;
@@ -126,7 +141,12 @@
 
   <main>
     <h2>Submit Your Request</h2>
-    <form onsubmit="alert('Request submitted! We will contact you shortly.'); return false;">
+
+    <div class="notice">
+      ⚠️ This is a <strong>Pay Per Demand</strong> service. You will receive pricing details via email after submitting your request.
+    </div>
+
+    <form action="https://script.google.com/macros/s/AKfycbwVST3lFazn8a34v97HQH1yYz7A4M3TO_U4FGGqjqLE2lsK5_LtYvoajI5YSAACCQkuYA/exec" method="POST" onsubmit="alert('Request submitted! You will be contacted shortly.'); return true;">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <select name="software" required>
