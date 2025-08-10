@@ -151,9 +151,22 @@
       color: #42a5f5;
     }
 
+    footer {
+      text-align: center;
+      background: #1f1f1f; /* subtle difference for footer */
+      color: #aaaaaa;
+      padding: 1rem;
+      font-size: 0.9rem;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
     /* 🌐 Mobile Responsive */
     @media (max-width: 768px) {
-.header-container {
+      .header-container {
         justify-content: flex-start;
         padding: 1rem;
       }
@@ -179,6 +192,7 @@
       footer {
         padding: 1rem;
       }
+
     }
   </style>
 </head>
@@ -229,8 +243,9 @@
 
   </div>
 
+<footer>
+  <p>&copy; 2025 EngiSimulation. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
-
-
-
