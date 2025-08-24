@@ -35,6 +35,7 @@
 
     html {
       background-color: #1a1a1a;
+      scroll-behavior: smooth;
     }
     
     ::-webkit-scrollbar {
@@ -73,12 +74,91 @@
     .header-container {
      display: flex;
      align-items: center;
-     justify-content: flex-start;
+     justify-content: space-between;
      gap: 1rem;
      max-width: 1200px;
      margin: 0 auto;
     }
 
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .navigation {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #42a5f5;
+      background-color: rgba(66, 165, 245, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 50%;
+      background-color: #42a5f5;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .mobile-menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #e0e0e0;
+      transition: 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #1a1a1a;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu .nav-link {
+      display: block;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      text-align: center;
+    }
 
     .logo {
      width: 50px;
@@ -185,6 +265,67 @@
       padding: 0.6rem 0.8rem;
     }
 
+    /* About and Help Sections */
+    .content-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .content-section h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #42a5f5;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .content-section h3 {
+      font-size: 1.5rem;
+      color: #90caf9;
+      margin: 2rem 0 1rem;
+    }
+
+    .content-section p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: #e0e0e0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: linear-gradient(135deg, #2b2b2b, #3a3a3a);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid #42a5f5;
+    }
+
+    .feature-card h4 {
+      color: #90caf9;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .help-item {
+      background: linear-gradient(135deg, #2b2b2b, #3a3a3a);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #e57399;
+    }
+
+    .help-item h4 {
+      color: #e57399;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
 
     footer {
       text-align: center;
@@ -228,8 +369,17 @@
     /* 🌐 Mobile Optimizations */
     @media (max-width: 768px) {
       .header-container {
-        justify-content: flex-start;
+        justify-content: space-between;
         padding: 1rem;
+        position: relative;
+      }
+
+      .navigation {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
       }
 
       header h1 {
@@ -270,6 +420,18 @@
         padding: 1rem;
       }
 
+      .content-section {
+        padding: 2rem 1rem;
+      }
+
+      .content-section h2 {
+        font-size: 2rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
       footer {
         padding: 1rem;
       }
@@ -280,10 +442,28 @@
 
 <header>
   <div class="header-container">
-    <a href="index.html" class="logo-title-link">
-      <img src="EngiSimulation.png" alt="EngiSimulation" class="logo" />
-      <h1>EngiSimulation</h1>
-    </a>
+    <div class="logo-section">
+      <a href="#" class="logo-title-link">
+        <img src="EngiSimulation.png" alt="EngiSimulation" class="logo" />
+        <h1>EngiSimulation</h1>
+      </a>
+    </div>
+    
+    <nav class="navigation">
+      <a href="#about" class="nav-link">About EngiSimulation</a>
+      <a href="#help" class="nav-link">Help</a>
+    </nav>
+
+    <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" class="nav-link" onclick="closeMobileMenu()">About EngiSimulation</a>
+      <a href="#help" class="nav-link" onclick="closeMobileMenu()">Help</a>
+    </div>
   </div>
 </header>
 
@@ -333,22 +513,105 @@
     </div>
   </a>
 
-  <!-- AutoCAD Card -->
-  <a href="AutoCAD.html" class="software-card">
-    <div class="card-image-wrapper">
-      <img src="AutoCAD.png" alt="AutoCAD" class="card-img" />
-    </div>
-    <div class="card-body">
-      <div class="software-title">AutoCAD</div>
-      <div class="info-visible">Engineering Drawings</div>
-    </div>
-  </a>
-
 </main>
+
+<!-- About Section -->
+<section id="about" class="content-section">
+  <h2>About EngiSimulation</h2>
+  <p>
+    EngiSimulation is your comprehensive resource hub for advanced engineering tools and templates. We specialize in providing high-quality, ready-to-use solutions for engineers, students, and professionals working with industry-standard software.
+  </p>
+  
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h4>Professional Templates</h4>
+      <p>Access meticulously crafted templates and models that save you time and ensure best practices in your engineering projects.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h4>Multi-Platform Support</h4>
+      <p>We support major engineering software including MATLAB/Simulink, LabVIEW, Multisim, and AutoCAD with more platforms coming soon.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h4>Educational Resources</h4>
+      <p>Perfect for students and educators looking to enhance learning experiences with practical, hands-on simulation examples.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h4>Industry Standards</h4>
+      <p>All our resources follow industry best practices and standards, ensuring professional-grade quality for your projects.</p>
+    </div>
+  </div>
+
+  <h3>Our Mission</h3>
+  <p>
+    To democratize access to advanced engineering simulation tools and templates, enabling engineers worldwide to focus on innovation rather than starting from scratch. We believe that by providing high-quality, accessible resources, we can accelerate engineering excellence and foster technological advancement.
+  </p>
+</section>
+
+<!-- Help Section -->
+<section id="help" class="content-section">
+  <h2>Help & Support</h2>
+  <p>
+    Need assistance with our platform or have questions about our engineering resources? Here's everything you need to know to get the most out of EngiSimulation.
+  </p>
+
+  <div class="help-item">
+    <h4>Getting Started</h4>
+    <p>
+      Browse our software categories above to find templates and resources for your specific engineering needs. Each software section contains curated collections of simulation models, templates, and examples ready for immediate use.
+    </p>
+  </div>
+
+  <div class="help-item">
+    <h4>Download Instructions</h4>
+    <p>
+      Click on any software card to access its dedicated page. From there, you can browse available templates, read detailed descriptions, and download the files you need. All downloads are organized by category and difficulty level.
+    </p>
+  </div>
+
+  <div class="help-item">
+    <h4>Software Requirements</h4>
+    <p>
+      Each template page includes specific software version requirements and compatibility information. Make sure you have the appropriate software installed before downloading and using our templates.
+    </p>
+  </div>
+
+  <div class="help-item">
+    <h4>Troubleshooting</h4>
+    <p>
+      If you encounter issues with any template or simulation, first check that you're using the correct software version. Most compatibility issues stem from version mismatches. Detailed troubleshooting guides are available on each software's dedicated page.
+    </p>
+  </div>
+
+  
 
 <footer>
   <p>&copy; 2025 EngiSimulation. All rights reserved.</p>
 </footer>
+
+<script>
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileMenu.classList.toggle('active');
+}
+
+function closeMobileMenu() {
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileMenu.classList.remove('active');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+  const mobileMenu = document.getElementById('mobileMenu');
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  
+  if (!mobileMenu.contains(event.target) && !toggle.contains(event.target)) {
+    mobileMenu.classList.remove('active');
+  }
+});
+</script>
 
 </body>
 </html>
