@@ -321,6 +321,50 @@
       border-left: 4px solid #e57399;
     }
 
+    /* Founder Section */
+    .founder-section {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      margin: 2rem 0;
+      background: linear-gradient(135deg, #2b2b2b, #3a3a3a);
+      padding: 2rem;
+      border-radius: 16px;
+      border-left: 4px solid #42a5f5;
+    }
+
+    .founder-image {
+      flex-shrink: 0;
+    }
+
+    .founder-img {
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      border: 3px solid #42a5f5;
+    }
+
+    .founder-content {
+      flex: 1;
+    }
+
+    .founder-content h4 {
+      font-size: 1.8rem;
+      color: #42a5f5;
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    .founder-title {
+      font-size: 1.1rem;
+      color: #90caf9;
+      margin: 0 0 1.5rem 0;
+      font-weight: 500;
+      font-style: italic;
+    }
+
     .help-item h4 {
       color: #e57399;
       margin-bottom: 1rem;
@@ -428,6 +472,23 @@
         font-size: 2rem;
       }
 
+      .founder-section {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .founder-img {
+        width: 150px;
+        height: 180px;
+      }
+
+      .founder-content h4 {
+        font-size: 1.5rem;
+      }
+
       .feature-grid {
         grid-template-columns: 1fr;
       }
@@ -513,6 +574,7 @@
     </div>
   </a>
 
+
 </main>
 
 <!-- About Section -->
@@ -530,7 +592,7 @@
     
     <div class="feature-card">
       <h4>Multi-Platform Support</h4>
-      <p>We support major engineering software including MATLAB/Simulink, LabVIEW, Multisim, and AutoCAD with more platforms coming soon.</p>
+      <p>      We support major engineering software including MATLAB/Simulink, LabVIEW, and Multisim with more platforms coming soon.</p>
     </div>
     
     <div class="feature-card">
@@ -548,6 +610,27 @@
   <p>
     To democratize access to advanced engineering simulation tools and templates, enabling engineers worldwide to focus on innovation rather than starting from scratch. We believe that by providing high-quality, accessible resources, we can accelerate engineering excellence and foster technological advancement.
   </p>
+
+  <!-- Founder Section -->
+  <h3>Meet the Founder</h3>
+  <div class="founder-section">
+    <div class="founder-image">
+      <img src="saqib-hussain.jpg" alt="Saqib Hussain - Founder" class="founder-img" />
+    </div>
+    <div class="founder-content">
+      <h4>Saqib Hussain</h4>
+      <p class="founder-title">Founder & Lead Engineer</p>
+      <p>
+        As an Electrical Engineering graduate of 2025, I founded EngiSimulation with a passion for making advanced engineering tools accessible to everyone. As the sole creator and operator of this platform, I personally design and develop every simulation, template, and resource available here.
+      </p>
+      <p>
+        My hands-on experience with MATLAB/Simulink, LabVIEW, and Multisim drives my commitment to creating practical, real-world solutions that engineers and students can rely on. Every template you find here represents hours of careful design, testing, and optimization to ensure the highest quality standards.
+      </p>
+      <p>
+        My vision is to bridge the gap between theoretical knowledge and practical application, empowering the next generation of engineers with tools that accelerate learning and innovation.
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- Help Section -->
@@ -585,7 +668,13 @@
     </p>
   </div>
 
-  
+  <div class="help-item">
+    <h4>Contact Support</h4>
+    <p>
+      Still need help? Contact our support team at support@engisimulation.com. We typically respond within 24 hours and are here to help you succeed with your engineering projects.
+    </p>
+  </div>
+</section>
 
 <footer>
   <p>&copy; 2025 EngiSimulation. All rights reserved.</p>
