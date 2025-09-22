@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="EngiSimulation.png" />
   <link rel="canonical" href="https://www.engisimulation.com/">
+
   
   <!-- SEO Meta Tags -->
   <meta name="description" content="Egisimulation (engisimulation.com) offers simulation projects and guides in MATLAB, LabVIEW, and Multisim. Download files and explore engineering simulations easily."/>
@@ -28,7 +29,9 @@
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8929617530766288"
      crossorigin="anonymous"></script>
+  
   <meta name="google-adsense-account" content="ca-pub-8929617530766288">
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -192,23 +195,42 @@
       margin: 0;
     }
 
+    .image-content {
+      position: relative;  /* keeps the image controlled inside */
+      width: 100%;         /* spans available space */
+      height: 100%;        
+    }
+
+    .body-img {
+      position: absolute;   /* allows pixel placement */
+      top: -275px;            /* adjust pixel position from top */
+      right: 182px;          /* adjust pixel position from right */
+      width: 450px;         /* exact size in pixels */
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+
+
     .intro-section {
       display: flex;
       flex-direction: row;
       gap: 2rem;
-      padding: 2rem;
+      padding: 3rem 2rem;
       flex-wrap: wrap;
       max-width: 1200px;
       margin: 0 auto;
+      margin-top: 40px;
+      align-items: center;   
     }
 
-    .text-content {
-      flex: 1;
-      min-width: 280px;
-    }
+      .text-content {
+        flex: 1;
+        min-width: 280px;
+      }
 
     .intro-section h2 {
-      width: 30rem;
+      width: 40rem;
       font-size: 2rem;
       font-weight: 600;
       margin: 0 0 3rem;
@@ -217,7 +239,7 @@
     }
 
     .intro-section p {
-      width: 30rem;
+      width: 40rem;
       font-size: 1.3rem;
       margin: 0;
       color: #e0e0e0;
@@ -228,7 +250,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      padding: 2rem 1rem;
+      padding: 5rem 1rem;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -283,115 +305,9 @@
       padding: 0.6rem 0.8rem;
     }
 
-    /* About and Help Sections */
-    .content-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-
-    .content-section h2 {
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: #42a5f5;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .content-section h3 {
-      font-size: 1.5rem;
-      color: #90caf9;
-      margin: 2rem 0 1rem;
-    }
-
-    .content-section p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-      color: #e0e0e0;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .feature-card {
-      background: linear-gradient(135deg, #2b2b2b, #3a3a3a);
-      padding: 1.5rem;
-      border-radius: 12px;
-      border-left: 4px solid #42a5f5;
-    }
-
-    .feature-card h4 {
-      color: #90caf9;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    .help-item {
-      background: linear-gradient(135deg, #2b2b2b, #3a3a3a);
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-      border-left: 4px solid #e57399;
-    }
-
-    /* Founder Section */
-    .founder-section {
-      display: flex;
-      gap: 3rem;
-      align-items: flex-start;
-      margin: 2rem 0;
-      background: linear-gradient(135deg, #2b2b2b, #3a3a3a);
-      padding: 2rem;
-      border-radius: 16px;
-      border-left: 4px solid #42a5f5;
-    }
-
-    .founder-image {
-      flex-shrink: 0;
-    }
-
-    .founder-img {
-      width: 200px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-      border: 3px solid #42a5f5;
-    }
-
-    .founder-content {
-      flex: 1;
-    }
-
-    .founder-content h4 {
-      font-size: 1.8rem;
-      color: #42a5f5;
-      margin: 0 0 0.5rem 0;
-      font-weight: 600;
-    }
-
-    .founder-title {
-      font-size: 1.1rem;
-      color: #90caf9;
-      margin: 0 0 1.5rem 0;
-      font-weight: 500;
-      font-style: italic;
-    }
-
-    .help-item h4 {
-      color: #e57399;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
     footer {
       text-align: center;
-      background: #1f1f1f; /* subtle difference for footer */
+      background: #1f1f1f;
       color: #aaaaaa;
       padding: 1rem;
       font-size: 0.9rem;
@@ -399,15 +315,31 @@
     }
 
     footer p {
-      margin: 0;
+      margin: 0.3rem 0;
+    }
+
+    .quick-links {
+      margin-top: 0.5rem;
+    }
+
+    .quick-links a {
+      color: #42a5f5;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .quick-links a:hover {
+      color: #e57399;
     }
 
     .text-blue {
-      color: #42a5f5; /* light blue */
+      color: #42a5f5;
     }
 
     .text-pink {
-      color: #e57399; /* vibrant pink */
+      color: #e57399;
     }
 
     .text-gradient {
@@ -530,8 +462,10 @@
     </div>
     
     <nav class="navigation">
-      <a href="#about" class="nav-link">About EngiSimulation</a>
-      <a href="#help" class="nav-link">Help</a>
+      <a href="about.html" class="nav-link">About EngiSimulation</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="Terms of Service.html" class="nav-link">Terms of Service</a>
+      <a href="Privacy Policy.html" class="nav-link">Privacy Policy</a>
     </nav>
 
     <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
@@ -541,8 +475,10 @@
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#about" class="nav-link" onclick="closeMobileMenu()">About EngiSimulation</a>
-      <a href="#help" class="nav-link" onclick="closeMobileMenu()">Help</a>
+      <a href="about.html" class="nav-link">About EngiSimulation</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="Terms of Service.html" class="nav-link">Terms of Service</a>
+      <a href="Privacy Policy.html" class="nav-link">Privacy Policy</a>
     </div>
   </div>
 </header>
@@ -557,6 +493,12 @@
     <p>
       Access tools and templates to simplify complex engineering tasks and enhance your projects.
     </p>
+  </div>
+</section>
+
+  <!-- ✅ Image on the right -->
+  <div class="image-content">
+    <img src="EngiSimulation Body.png" alt="Engineering Illustration" class="body-img" />
   </div>
 </section>
 
@@ -595,107 +537,18 @@
 
 </main>
 
-<!-- About Section -->
-<section id="about" class="content-section">
-  <h2>About EngiSimulation</h2>
-  <p>
-    EngiSimulation is your comprehensive resource hub for advanced engineering tools and templates. We specialize in providing high-quality, ready-to-use solutions for engineers, students, and professionals working with industry-standard software.
-  </p>
-  
-  <div class="feature-grid">
-    <div class="feature-card">
-      <h4>Professional Templates</h4>
-      <p>Access meticulously crafted templates and models that save you time and ensure best practices in your engineering projects.</p>
-    </div>
-    
-    <div class="feature-card">
-      <h4>Multi-Platform Support</h4>
-      <p>We support major engineering software including MATLAB/Simulink, LabVIEW, and Multisim with more platforms coming soon.</p>
-    </div>
-    
-    <div class="feature-card">
-      <h4>Educational Resources</h4>
-      <p>Perfect for students and educators looking to enhance learning experiences with practical, hands-on simulation examples.</p>
-    </div>
-    
-    <div class="feature-card">
-      <h4>Industry Standards</h4>
-      <p>All our resources follow industry best practices and standards, ensuring professional-grade quality for your projects.</p>
-    </div>
-  </div>
 
-  <h3>Our Mission</h3>
-  <p>
-    To democratize access to advanced engineering simulation tools and templates, enabling engineers worldwide to focus on innovation rather than starting from scratch. We believe that by providing high-quality, accessible resources, we can accelerate engineering excellence and foster technological advancement.
-  </p>
 
-  <!-- Founder Section -->
-  <h3>Meet the Founder</h3>
-  <div class="founder-section">
-    <div class="founder-image">
-      <img src="saqib-hussain.jpeg" alt="Saqib Hussain - Founder" class="founder-img" />
-    </div>
-    <div class="founder-content">
-      <h4>Saqib Hussain</h4>
-      <p class="founder-title">Founder & Lead Engineer</p>
-      <p>
-        As an Electrical Engineering graduate of 2025, I founded EngiSimulation with a passion for making advanced engineering tools accessible to everyone. As the sole creator and operator of this platform, I personally design and develop every simulation, template, and resource available here.
-      </p>
-      <p>
-        My hands-on experience with MATLAB/Simulink, LabVIEW, and Multisim drives my commitment to creating practical, real-world solutions that engineers and students can rely on. Every template you find here represents hours of careful design, testing, and optimization to ensure the highest quality standards.
-      </p>
-      <p>
-        My vision is to bridge the gap between theoretical knowledge and practical application, empowering the next generation of engineers with tools that accelerate learning and innovation.
-      </p>
-    </div>
-  </div>
-</section>
 
-<!-- Help Section -->
-<section id="help" class="content-section">
-  <h2>Help & Support</h2>
-  <p>
-    Need assistance with our platform or have questions about our engineering resources? Here's everything you need to know to get the most out of EngiSimulation.
-  </p>
-
-  <div class="help-item">
-    <h4>Getting Started</h4>
-    <p>
-      Browse our software categories above to find templates and resources for your specific engineering needs. Each software section contains curated collections of simulation models, templates, and examples ready for immediate use.
-    </p>
-  </div>
-
-  <div class="help-item">
-    <h4>Download Instructions</h4>
-    <p>
-      Click on any software card to access its dedicated page. From there, you can browse available templates, read detailed descriptions, and download the files you need. All downloads are organized by category and difficulty level.
-    </p>
-  </div>
-
-  <div class="help-item">
-    <h4>Software Requirements</h4>
-    <p>
-      Each template page includes specific software version requirements and compatibility information. Make sure you have the appropriate software installed before downloading and using our templates.
-    </p>
-  </div>
-
-  <div class="help-item">
-    <h4>Troubleshooting</h4>
-    <p>
-      If you encounter issues with any template or simulation, first check that you're using the correct software version. Most compatibility issues stem from version mismatches. Detailed troubleshooting guides are available on each software's dedicated page.
-    </p>
-  </div>
-
-  <div class="help-item">
-    <h4>Contact Support</h4>
-    <p>
-      Still need help? Contact our support team at <a href="mailto:support@engisimulation.com">support@engisimulation.com</a> We typically respond within 24 hours and are here to help you succeed with your engineering projects.
-    </p>
-  </div>
-</section>
 
 <footer>
   <p>&copy; 2025 EngiSimulation. All rights reserved.</p>
+  <div class="quick-links">
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="Terms of Service.html">Terms of Service</a> |
+    <a href="Privacy Policy.html">Privacy Policy</a>
+  </div>
 </footer>
 
 <script>
@@ -722,5 +575,3 @@ document.addEventListener('click', function(event) {
 
 </body>
 </html>
-
-
