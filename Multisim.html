@@ -27,7 +27,9 @@
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8929617530766288"
      crossorigin="anonymous"></script>
+
   <meta name="google-adsense-account" content="ca-pub-8929617530766288">
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -109,7 +111,7 @@
     }
 
     header {
-      background: #1a1a1a; /* matching dark grey */
+     background: #1a1a1a; /* matching dark grey */
      padding: 1.2rem;
      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
@@ -117,10 +119,90 @@
     .header-container {
      display: flex;
      align-items: center;
-     justify-content: flex-start;
+     justify-content: space-between;
      gap: 1rem;
      max-width: 1200px;
      margin: 0 auto;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .navigation {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #42a5f5;
+      background-color: rgba(66, 165, 245, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 50%;
+      background-color: #42a5f5;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .mobile-menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #e0e0e0;
+      transition: 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #1a1a1a;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu .nav-link {
+      display: block;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      text-align: center;
     }
 
     .logo {
@@ -281,6 +363,14 @@
         padding: 1rem;
       }
 
+      .navigation {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
+      }
+
       header h1 {
         font-size: 1.4rem;
       }
@@ -313,10 +403,32 @@
 
 <header>
   <div class="header-container">
-    <a href="index.html" class="logo-title-link">
-      <img src="EngiSimulation.png" alt="EngiSimulation" class="logo" />
-      <h1>EngiSimulation</h1>
-    </a>
+    <div class="logo-section">
+      <a href="#" class="logo-title-link">
+        <img src="EngiSimulation.png" alt="EngiSimulation" class="logo" />
+        <h1>EngiSimulation</h1>
+      </a>
+    </div>
+    
+    <nav class="navigation">
+      <a href="about.html" class="nav-link">About EngiSimulation</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="Terms of Service.html" class="nav-link">Terms of Service</a>
+      <a href="Privacy Policy.html" class="nav-link">Privacy Policy</a>
+    </nav>
+
+    <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="about.html" class="nav-link">About EngiSimulation</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="Terms of Service.html" class="nav-link">Terms of Service</a>
+      <a href="Privacy Policy.html" class="nav-link">Privacy Policy</a>
+    </div>
   </div>
 </header>
 
@@ -420,4 +532,3 @@
 
 </body>
 </html>
-
