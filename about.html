@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - EngiSimulation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="EngiSimulation.png" />
+  <meta name="description" content="Learn about EngiSimulation and founder Saqib Hussain. Professional engineering templates for MATLAB, LabVIEW, and Multisim created by an Electrical Engineering graduate." />
+  
+  <style>
+    * { box-sizing: border-box; }
+    html { background-color: #1a1a1a; scroll-behavior: smooth; }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a; /* Match your dark theme */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #444;  /* Dark thumb */
+      border-radius: 10px;
+      border: 2px solid #1a1a1a; /* Gives padding around thumb */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #666;
+    }
+    
+    body { overflow-x: hidden; margin: 0; font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #1a1a1a, #2e2e2e); color: #e0e0e0; line-height: 1.6; }
+    
+    header { background: #1a1a1a; padding: 1.2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); }
+    .header-container { display: flex; align-items: center; justify-content: flex-start; gap: 1rem; max-width: 1200px; margin: 0 auto; }
+    .logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+    .logo-title-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    header h1 { font-size: 1.8rem; font-weight: 600; color: #42a5f5; margin: 0; }
+    
+    .content-section { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+    .content-section h2 { font-size: 2.5rem; font-weight: 600; color: #42a5f5; margin-bottom: 2rem; text-align: center; }
+    .content-section h3 { font-size: 1.5rem; color: #90caf9; margin: 2rem 0 1rem; }
+    .content-section p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem; color: #e0e0e0; }
+    
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
+    .feature-card { background: linear-gradient(135deg, #2b2b2b, #3a3a3a); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #42a5f5; }
+    .feature-card h4 { color: #90caf9; margin-bottom: 1rem; font-size: 1.2rem; }
+    
+    .founder-section { display: flex; gap: 3rem; align-items: flex-start; margin: 2rem 0; background: linear-gradient(135deg, #2b2b2b, #3a3a3a); padding: 2rem; border-radius: 16px; border-left: 4px solid #42a5f5; }
+    .founder-image { flex-shrink: 0; }
+    .founder-img { width: 200px; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); border: 3px solid #42a5f5; }
+    .founder-content { flex: 1; }
+    .founder-content h4 { font-size: 1.8rem; color: #42a5f5; margin: 0 0 0.5rem 0; font-weight: 600; }
+    .founder-title { font-size: 1.1rem; color: #90caf9; margin: 0 0 1.5rem 0; font-weight: 500; font-style: italic; }
+
+    .breadcrumb {
+      max-width: 1200px;
+      margin: 1rem auto;
+      padding: 0 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .breadcrumb a {
+      color: #42a5f5;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    
+    footer { text-align: center; background: #1f1f1f; color: #aaaaaa; padding: 1rem; font-size: 0.9rem; box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3); margin-top: 3rem; }
+    
+    @media (max-width: 768px) {
+      .header-container { padding: 1rem; }
+      header h1 { font-size: 1.4rem; }
+      .logo { width: 40px; height: 40px; }
+      .content-section { padding: 2rem 1rem; }
+      .content-section h2 { font-size: 2rem; }
+      .founder-section { flex-direction: column; gap: 2rem; align-items: center; text-align: center; padding: 1.5rem; }
+      .founder-img { width: 150px; height: 180px; }
+      .founder-content h4 { font-size: 1.5rem; }
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo-title-link">
+      <img src="EngiSimulation.png" alt="EngiSimulation" class="logo" />
+      <h1>EngiSimulation</h1>
+    </a>
+  </div>
+</header>
+
+<nav class="breadcrumb">
+    <a href="index.html">Home</a> > About EngiSimulation
+</nav>
+  
+
+<section class="content-section">
+  <h2>About EngiSimulation</h2>
+  <p>EngiSimulation is your comprehensive resource hub for advanced engineering tools and templates. We specialize in providing high-quality, ready-to-use solutions for engineers, students, and professionals working with industry-standard software.</p>
+  
+  <div class="feature-grid">
+    <div class="feature-card">
+      <h4>Professional Templates</h4>
+      <p>Access meticulously crafted templates and models that save you time and ensure best practices in your engineering projects.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h4>Multi-Platform Support</h4>
+      <p>We support major engineering software including MATLAB/Simulink, LabVIEW, and Multisim with more platforms coming soon.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h4>Educational Resources</h4>
+      <p>Perfect for students and educators looking to enhance learning experiences with practical, hands-on simulation examples.</p>
+    </div>
+    
+    <div class="feature-card">
+      <h4>Industry Standards</h4>
+      <p>All our resources follow industry best practices and standards, ensuring professional-grade quality for your projects.</p>
+    </div>
+  </div>
+
+  <h3>Our Mission</h3>
+  <p>To democratize access to advanced engineering simulation tools and templates, enabling engineers worldwide to focus on innovation rather than starting from scratch. We believe that by providing high-quality, accessible resources, we can accelerate engineering excellence and foster technological advancement.</p>
+
+  <h3>Meet the Founder</h3>
+  <div class="founder-section">
+    <div class="founder-image">
+      <img src="saqib-hussain.jpeg" alt="Saqib Hussain - Founder" class="founder-img" />
+    </div>
+    <div class="founder-content">
+      <h4>Saqib Hussain</h4>
+      <p class="founder-title">Founder & Lead Engineer</p>
+      <p>As an Electrical Engineering graduate of 2025, I founded EngiSimulation with a passion for making advanced engineering tools accessible to everyone. As the sole creator and operator of this platform, I personally design and develop every simulation, template, and resource available here.</p>
+      <p>My hands-on experience with MATLAB/Simulink, LabVIEW, and Multisim drives my commitment to creating practical, real-world solutions that engineers and students can rely on. Every template you find here represents hours of careful design, testing, and optimization to ensure the highest quality standards.</p>
+      <p>My vision is to bridge the gap between theoretical knowledge and practical application, empowering the next generation of engineers with tools that accelerate learning and innovation.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 EngiSimulation. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
