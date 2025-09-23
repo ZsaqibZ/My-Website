@@ -33,10 +33,85 @@
     body { overflow-x: hidden; margin: 0; font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #1a1a1a, #2e2e2e); color: #e0e0e0; line-height: 1.6; }
     
     header { background: #1a1a1a; padding: 1.2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); }
-    .header-container { display: flex; align-items: center; justify-content: flex-start; gap: 1rem; max-width: 1200px; margin: 0 auto; }
+    .header-container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; }
     .logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
     .logo-title-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
     header h1 { font-size: 1.8rem; font-weight: 600; color: #42a5f5; margin: 0; }
+
+    .navigation {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #42a5f5;
+      background-color: rgba(66, 165, 245, 0.1);
+      transform: translateY(-1px);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 50%;
+      background-color: #42a5f5;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .mobile-menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #e0e0e0;
+      transition: 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #1a1a1a;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu .nav-link {
+      display: block;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+
     
     .content-section { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
     .content-section h2 { font-size: 2.5rem; font-weight: 600; color: #42a5f5; margin-bottom: 2rem; text-align: center; }
@@ -66,9 +141,27 @@
     
     footer { text-align: center; background: #1f1f1f; color: #aaaaaa; padding: 1rem; font-size: 0.9rem; box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3); margin-top: 3rem; }
     
+    .quick-links {
+      margin-top: 0.5rem;
+    }
+
+    .quick-links a {
+      color: #42a5f5;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .quick-links a:hover {
+      color: #e57399;
+    }
+    
     @media (max-width: 768px) {
-      .header-container { padding: 1rem; }
+      .header-container { justify-content: space-between; padding: 1rem; position: relative; }
       header h1 { font-size: 1.4rem; }
+      .navigation {display: none;}
+      .mobile-menu-toggle {display: flex;}
       .logo { width: 40px; height: 40px; }
       .content-section { padding: 2rem 1rem; }
       .content-section h2 { font-size: 2rem; }
@@ -79,10 +172,32 @@
 
 <header>
   <div class="header-container">
-    <a href="index.html" class="logo-title-link">
-      <img src="EngiSimulation.png" alt="EngiSimulation" class="logo" />
-      <h1>EngiSimulation</h1>
-    </a>
+    <div class="logo-section">
+      <a href="index.html" class="logo-title-link">
+        <img src="EngiSimulation.png" alt="EngiSimulation" class="logo" />
+        <h1>EngiSimulation</h1>
+      </a>
+    </div>
+    
+    <nav class="navigation">
+      <a href="about.html" class="nav-link">About EngiSimulation</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="Terms of Service.html" class="nav-link">Terms of Service</a>
+      <a href="Privacy Policy.html" class="nav-link">Privacy Policy</a>
+    </nav>
+
+    <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="about.html" class="nav-link">About EngiSimulation</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+      <a href="Terms of Service.html" class="nav-link">Terms of Service</a>
+      <a href="Privacy Policy.html" class="nav-link">Privacy Policy</a>
+    </div>
   </div>
 </header>
 
@@ -183,7 +298,35 @@
 
 <footer>
   <p>&copy; 2025 EngiSimulation. All rights reserved.</p>
+  <div class="quick-links">
+    <a href="about.html">About Us</a> |
+    <a href="contact.html">Contact Us</a> |
+    <a href="Terms of Service.html">Terms of Service</a> |
+    <a href="Privacy Policy.html">Privacy Policy</a>
+  </div>
 </footer>
+
+<script>
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('active');
+  }
+  
+  function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.remove('active');
+  }
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    
+    if (!mobileMenu.contains(event.target) && !toggle.contains(event.target)) {
+      mobileMenu.classList.remove('active');
+    }
+  });
+</script>
 
 </body>
 </html>
