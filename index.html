@@ -195,28 +195,11 @@
       margin: 0;
     }
 
-    .image-content {
-      position: relative;  /* keeps the image controlled inside */
-      width: 100%;         /* spans available space */
-      height: 100%;        
-    }
-
-    .body-img {
-      position: absolute;   /* allows pixel placement */
-      top: -275px;            /* adjust pixel position from top */
-      right: 182px;          /* adjust pixel position from right */
-      width: 450px;         /* exact size in pixels */
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-    }
-
-
     .intro-section {
       display: flex;
       flex-direction: row;
       gap: 2rem;
-      padding: 3rem 2rem;
+      padding: 1rem 2rem;
       flex-wrap: wrap;
       max-width: 1200px;
       margin: 0 auto;
@@ -224,10 +207,26 @@
       align-items: center;   
     }
 
-      .text-content {
-        flex: 1;
-        min-width: 280px;
-      }
+    .text-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .image-content {
+      flex-shrink: 0;       /* prevent image from shrinking too much */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .body-img {
+      max-width: 450px;     /* scales responsively, won’t exceed 450px */
+      width: 100%;          /* shrink if screen is smaller */
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+
 
     .intro-section h2 {
       width: 40rem;
@@ -504,13 +503,12 @@
       Access tools and templates to simplify complex engineering tasks and enhance your projects.
     </p>
   </div>
-</section>
-
-  <!-- ✅ Image on the right -->
   <div class="image-content">
     <img src="EngiSimulation Body.png" alt="Engineering Illustration" class="body-img" />
   </div>
 </section>
+
+  <!-- ✅ Image on the right -->
 
 <main class="software-section">
   <a href="MATLAB.html" class="software-card">
