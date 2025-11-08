@@ -6,209 +6,479 @@
   <title>About Us - EngiSimulation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="EngiSimulation.avif" />
-  <link rel="canonical" href="https://www.engisimulation.com/about.html">
+  <link rel="canonical" href="https://engisimulation.com/about.html">
   <meta name="description" content="Learn about EngiSimulation and founder Saqib Hussain. Professional engineering templates for MATLAB, LabVIEW, and Multisim created by an Electrical Engineering graduate." />
   
   <style>
-    * { box-sizing: border-box; }
-    html { background-color: #1a1a1a; scroll-behavior: smooth; }
+    :root {
+      --color-bg: #111317;
+      --color-surface: #1c1f26;
+      --color-surface-alt: #21252d;
+      --color-primary: #4aa8ff;
+      --color-primary-dark: #1d6fd8;
+      --color-primary-soft: rgba(74, 168, 255, 0.16);
+      --color-accent: #ff6f91;
+      --color-text: #e8ecf5;
+      --color-text-muted: #a8b2c6;
+      --color-border: rgba(148, 170, 204, 0.14);
+      --shadow-sm: 0 8px 24px rgba(8, 10, 15, 0.35);
+      --shadow-lg: 0 24px 48px rgba(8, 10, 15, 0.45);
+      --transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background-color: var(--color-bg);
+      scroll-behavior: smooth;
+    }
 
     ::-webkit-scrollbar {
       width: 8px;
     }
 
     ::-webkit-scrollbar-track {
-      background: #1a1a1a; /* Match your dark theme */
+      background: var(--color-bg);
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: #444;  /* Dark thumb */
-      border-radius: 10px;
-      border: 2px solid #1a1a1a; /* Gives padding around thumb */
+      background-color: var(--color-surface-alt);
+      border-radius: 12px;
+      border: 2px solid var(--color-bg);
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background-color: #666;
+      background-color: #313646;
     }
-    
-    body { overflow-x: hidden; margin: 0; font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #1a1a1a, #2e2e2e); color: #e0e0e0; line-height: 1.6; }
-    
-    header { background: #1a1a1a; padding: 1.2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); }
-    .header-container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; }
-    .logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-    .logo-title-link { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
-    header h1 { font-size: 1.8rem; font-weight: 600; color: #42a5f5; margin: 0; }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: radial-gradient(circle at top, rgba(74, 168, 255, 0.12), transparent 45%),
+                  radial-gradient(circle at bottom, rgba(255, 111, 145, 0.08), transparent 40%),
+                  linear-gradient(140deg, #0c0d10 0%, #161920 35%, #12151b 100%);
+      color: var(--color-text);
+      line-height: 1.65;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(12, 14, 18, 0.84);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(148, 170, 204, 0.12);
+    }
+
+    .announcement-bar {
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      background: rgba(31, 35, 45, 0.65);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .announcement-bar span {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .logo-title-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 18px rgba(26, 33, 46, 0.35);
+    }
+
+    header h1 {
+      margin: 0;
+      color: var(--color-text);
+      font-weight: 600;
+      font-size: 1.6rem;
+      letter-spacing: 0.01em;
+    }
 
     .navigation {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       align-items: center;
     }
 
     .nav-link {
-      color: #e0e0e0;
-      text-decoration: none;
+      color: var(--color-text-muted);
       font-weight: 500;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
+      text-decoration: none;
+      padding: 0.55rem 0.95rem;
+      border-radius: 10px;
       position: relative;
+      transition: var(--transition);
+      letter-spacing: 0.01em;
     }
 
     .nav-link:hover {
-      color: #42a5f5;
-      background-color: rgba(66, 165, 245, 0.1);
+      color: var(--color-primary);
+      background: rgba(74, 168, 255, 0.08);
       transform: translateY(-1px);
     }
 
     .nav-link::after {
       content: '';
       position: absolute;
-      width: 0;
+      inset-inline: 40%;
+      bottom: 4px;
       height: 2px;
-      bottom: -2px;
-      left: 50%;
-      background-color: #42a5f5;
-      transition: all 0.3s ease;
+      background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+      opacity: 0;
+      transition: var(--transition);
     }
 
-    .nav-link:hover::after {
-      width: 100%;
-      left: 0;
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      opacity: 1;
+      inset-inline: 10%;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.65rem 1.1rem;
+      border-radius: 999px;
+      background: linear-gradient(120deg, rgba(74, 168, 255, 0.18), rgba(74, 168, 255, 0.08));
+      border: 1px solid rgba(74, 168, 255, 0.4);
+      color: var(--color-text);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 8px 20px rgba(26, 122, 255, 0.22);
+    }
+
+    .header-cta:hover {
+      background: linear-gradient(120deg, rgba(74, 168, 255, 0.3), rgba(74, 168, 255, 0.1));
+      transform: translateY(-1px);
     }
 
     .mobile-menu-toggle {
       display: none;
       flex-direction: column;
+      gap: 5px;
       cursor: pointer;
-      gap: 4px;
     }
 
     .mobile-menu-toggle span {
-      width: 25px;
+      width: 26px;
       height: 3px;
-      background-color: #e0e0e0;
-      transition: 0.3s;
+      background: var(--color-text);
+      border-radius: 2px;
+      transition: var(--transition);
     }
 
     .mobile-menu {
       display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: #1a1a1a;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      top: calc(100% + 12px);
+      inset-inline: 1rem;
+      background: rgba(18, 20, 26, 0.95);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
       padding: 1rem;
+      box-shadow: var(--shadow-lg);
     }
 
     .mobile-menu.active {
       display: block;
+      animation: fadeIn 0.25s ease;
     }
 
     .mobile-menu .nav-link {
       display: block;
-      padding: 1rem;
-      margin: 0.5rem 0;
+      padding: 0.9rem 1rem;
+      margin: 0.25rem 0;
+      text-align: center;
+      border-radius: 12px;
+      background: rgba(34, 39, 49, 0.4);
+    }
+
+    .content-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .content-section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 2rem;
       text-align: center;
     }
 
-    
-    .content-section { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
-    .content-section h2 { font-size: 2.5rem; font-weight: 600; color: #42a5f5; margin-bottom: 2rem; text-align: center; }
-    .content-section h3 { font-size: 1.5rem; color: #90caf9; margin: 2rem 0 1rem; }
-    .content-section p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem; color: #e0e0e0; }
-    
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0; }
-    .feature-card { background: linear-gradient(135deg, #2b2b2b, #3a3a3a); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #42a5f5; }
-    .feature-card h4 { color: #90caf9; margin-bottom: 1rem; font-size: 1.2rem; }
-    
-    .founder-section { display: flex; gap: 3rem; align-items: flex-start; margin: 2rem 0; background: linear-gradient(135deg, #2b2b2b, #3a3a3a); padding: 2rem; border-radius: 16px; border-left: 4px solid #42a5f5; }
-    .founder-image { flex-shrink: 0; }
-    .founder-img { width: 200px; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); border: 3px solid #42a5f5; }
-    .founder-content { flex: 1; }
-    .founder-content h4 { font-size: 1.8rem; color: #42a5f5; margin: 0 0 0.5rem 0; font-weight: 600; }
-    .founder-title { font-size: 1.1rem; color: #90caf9; margin: 0 0 1.5rem 0; font-weight: 500; font-style: italic; }
+    .content-section h3 {
+      font-size: 1.5rem;
+      color: var(--color-primary);
+      margin: 2rem 0 1rem;
+      font-weight: 600;
+    }
+
+    .content-section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: var(--color-text-muted);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.6rem;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: linear-gradient(165deg, rgba(29, 33, 44, 0.96), rgba(19, 21, 28, 0.94));
+      padding: 1.8rem;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 170, 204, 0.16);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(74, 168, 255, 0.4);
+    }
+
+    .feature-card h4 {
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      margin-bottom: 0;
+    }
+
+    .founder-section {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+      margin: 2rem 0;
+      background: linear-gradient(165deg, rgba(29, 33, 44, 0.96), rgba(19, 21, 28, 0.94));
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(148, 170, 204, 0.16);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .founder-image {
+      flex-shrink: 0;
+    }
+
+    .founder-img {
+      width: 200px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 2px solid rgba(74, 168, 255, 0.3);
+    }
+
+    .founder-content {
+      flex: 1;
+    }
+
+    .founder-content h4 {
+      font-size: 1.8rem;
+      color: var(--color-primary);
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    .founder-title {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      margin: 0 0 1.5rem 0;
+      font-weight: 500;
+      font-style: italic;
+    }
 
     .breadcrumb {
       max-width: 1200px;
       margin: 1rem auto;
-      padding: 0 1rem;
-      font-size: 0.9rem;
-      color: #888;
+      padding: 0 1.5rem;
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
     }
 
     .breadcrumb a {
-      color: #42a5f5;
+      color: var(--color-primary);
       text-decoration: none;
     }
 
     .breadcrumb a:hover {
       text-decoration: underline;
     }
-    
-    footer { text-align: center; background: #1f1f1f; color: #aaaaaa; padding: 1rem; font-size: 0.9rem; box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3); margin-top: 3rem; }
-    
+
+    footer {
+      margin-top: 3rem;
+      background: rgba(13, 15, 21, 0.95);
+      border-top: 1px solid rgba(148, 170, 204, 0.12);
+      text-align: center;
+      color: var(--color-text-muted);
+      padding: 1.6rem 1.2rem 1.8rem;
+      font-size: 0.92rem;
+    }
+
+    footer p {
+      margin: 0;
+      color: var(--color-text);
+    }
+
     .quick-links {
-      margin-top: 0.5rem;
+      margin-top: 0.7rem;
     }
 
     .quick-links a {
-      color: #42a5f5;
+      color: var(--color-primary);
       text-decoration: none;
-      margin: 0 0.5rem;
+      margin: 0 0.45rem;
       font-weight: 500;
-      transition: color 0.3s ease;
+      letter-spacing: 0.01em;
     }
 
     .quick-links a:hover {
-      color: #e57399;
+      color: var(--color-accent);
     }
-    
-    @media (max-width: 768px) {
-      .header-container { justify-content: space-between; padding: 1rem; position: relative; }
-      header h1 { font-size: 1.4rem; }
-      .navigation {display: none;}
-      .mobile-menu-toggle {display: flex;}
-      .logo { width: 40px; height: 40px; }
-      .content-section { padding: 2rem 1rem; }
-      .content-section h2 { font-size: 2rem; }
-      .founder-section { flex-direction: column; gap: 2rem; align-items: center; text-align: center; padding: 1.5rem; }
-      .founder-img { width: 150px; height: 180px; }
-      .founder-content h4 { font-size: 1.5rem; }
-      .feature-grid { grid-template-columns: 1fr; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 940px) {
+      .navigation {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .announcement-bar {
+        font-size: 0.82rem;
+      }
+
+      .content-section {
+        padding: 2rem 1.1rem;
+      }
+
+      .founder-section {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .founder-img {
+        width: 150px;
+        height: 180px;
+      }
+
+      .founder-content h4 {
+        font-size: 1.5rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .header-container {
+        padding-inline: 1.1rem;
+      }
+
+      .logo {
+        width: 44px;
+        height: 44px;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
+  <div class="announcement-bar">
+    <span>New:</span> Free professional engineering templates for MATLAB, LabVIEW, and Multisim.
+  </div>
   <div class="header-container">
     <div class="logo-section">
-      <a href="index.html" class="logo-title-link">
+      <a href="index.html" class="logo-title-link" aria-label="EngiSimulation Home">
         <img src="EngiSimulation.avif" alt="EngiSimulation" class="logo" />
         <h1>EngiSimulation</h1>
       </a>
     </div>
-    
-    <nav class="navigation">
-      <a href="about.html" class="nav-link">About EngiSimulation</a>
-      <a href="contact.html" class="nav-link">Contact Us</a>
-      <a href="Terms of Service.html" class="nav-link">Terms of Service</a>
-      <a href="Privacy Policy.html" class="nav-link">Privacy Policy</a>
+
+    <nav class="navigation" aria-label="Primary">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="MATLAB.html" class="nav-link">MATLAB</a>
+      <a href="LabVIEW.html" class="nav-link">LabVIEW</a>
+      <a href="Multisim.html" class="nav-link">Multisim</a>
     </nav>
 
-    <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+    <a href="contact.html" class="header-cta">Get Started</a>
+
+    <div class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation" role="button">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="about.html" class="nav-link">About EngiSimulation</a>
-      <a href="contact.html" class="nav-link">Contact Us</a>
-      <a href="Terms of Service.html" class="nav-link">Terms of Service</a>
-      <a href="Privacy Policy.html" class="nav-link">Privacy Policy</a>
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+      <a href="index.html" class="nav-link" role="menuitem">Home</a>
+      <a href="about.html" class="nav-link" role="menuitem">About</a>
+      <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
+      <a href="MATLAB.html" class="nav-link" role="menuitem">MATLAB</a>
+      <a href="LabVIEW.html" class="nav-link" role="menuitem">LabVIEW</a>
+      <a href="Multisim.html" class="nav-link" role="menuitem">Multisim</a>
+      <a href="Terms of Service.html" class="nav-link" role="menuitem">Terms of Service</a>
+      <a href="Privacy Policy.html" class="nav-link" role="menuitem">Privacy Policy</a>
     </div>
   </div>
 </header>
@@ -287,13 +557,19 @@
   document.addEventListener('click', function(event) {
     const mobileMenu = document.getElementById('mobileMenu');
     const toggle = document.querySelector('.mobile-menu-toggle');
-    
+
     if (!mobileMenu.contains(event.target) && !toggle.contains(event.target)) {
       mobileMenu.classList.remove('active');
     }
+  });
+
+  // Close mobile menu after selecting a link
+  document.querySelectorAll('#mobileMenu .nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      closeMobileMenu();
+    });
   });
 </script>
 
 </body>
 </html>
-
